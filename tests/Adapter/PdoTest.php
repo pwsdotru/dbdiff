@@ -10,9 +10,24 @@ use PHPUnit\Framework\TestCase;
  */
 class PdoTest extends TestCase
 {
+    /**
+     * @covers ::__construct
+     */
     public function testConstruct()
     {
         $adapter = new Pdo();
         $this->assertIsObject($adapter);
+    }
+
+    /**
+     * @covers ::setLink
+     * @covers ::getLink
+     */
+    public function testSetLink()
+    {
+        $dbh = $pdo = $this->getMockBuilder('PDOMock')->getMock();
+        $adapter = new Pdo();
+        $adapter->setLink($dbh);
+        $this->assertIsObject($adapter->getLink());
     }
 }
