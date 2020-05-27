@@ -10,6 +10,9 @@ use PHPUnit\Framework\TestCase;
  */
 class DbDiffTest extends TestCase
 {
+    /**
+     * @covers ::__construct
+     */
     public function testConstruct()
     {
         $dbdiff = new DbDiff();

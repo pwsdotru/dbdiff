@@ -7,6 +7,7 @@ class Pdo extends \pwsdotru\DbDiff\Adapter implements \pwsdotru\DbDiff\AdapterIn
 {
     public function getTableInfo()
     {
-        // TODO: Implement getTableInfo() method.
+        $info = [];
+        return $info;
     }
 }

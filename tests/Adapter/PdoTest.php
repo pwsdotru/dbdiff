@@ -30,4 +30,17 @@ class PdoTest extends TestCase
         $adapter->setLink($dbh);
         $this->assertIsObject($adapter->getLink());
     }
+
+    /**
+     * @covers ::getTableInfo
+     */
+    public function testGetTableInfo()
+    {
+        $dbh = $pdo = $this->getMockBuilder('PDOMock')->getMock();
+        $adapter = new Pdo();
+        $adapter->setLink($dbh);
+
+        $data = $adapter->getTableInfo();
+        $this->assertIsArray($data);
+    }
 }
